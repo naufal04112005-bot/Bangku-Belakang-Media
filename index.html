@@ -4,8 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Bangku Belakang Media</title>
-<meta name="description" content="Kabar dari barisan paling belakang, tanpa filter.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23d7263d'/%3E%3Ctext x='32' y='43' font-family='sans-serif' font-weight='900' font-size='32' fill='white' text-anchor='middle'%3EBB%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Melihat Lebih Luas, Bersuara Lebih Tegas">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
@@ -23,11 +22,9 @@ a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;cursor:pointer}
 :focus-visible{outline:3px solid var(--red);outline-offset:2px}
 img{max-width:100%}
-.mast{background:#0a0a0c;color:#f4f4f6;border-bottom:3px solid var(--red);padding:20px 5%}
+.mast{background:#0a0a0c;color:#f4f4f6;border-bottom:3px solid var(--red);padding:26px 5%}
 .mast-in,.wrap,.nav-in,.foot-in{max-width:1180px;margin:auto}
-.mast-in{display:flex;align-items:center;gap:clamp(14px,3vw,28px)}
-.mark{width:clamp(64px,10vw,96px);height:clamp(64px,10vw,96px);border-radius:50%;flex:none;display:grid;place-items:center;background:var(--red);color:#fff;font-family:var(--head);font-weight:800;font-size:clamp(26px,4vw,38px);letter-spacing:-.04em;box-shadow:0 8px 30px rgba(215,38,61,.28)}
-.logo{font-family:var(--head);font-weight:800;font-size:clamp(26px,5.2vw,54px);line-height:.95;letter-spacing:-.03em;margin:0;color:#f4f4f6;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}
+.logo{font-family:var(--head);font-weight:800;font-size:clamp(30px,5.6vw,58px);line-height:.95;letter-spacing:-.03em;margin:0;color:#f4f4f6;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}
 .logo span{display:inline-block;background:var(--red);color:var(--on-red);padding:0 .22em .06em;margin-left:.12em;transform:rotate(-2deg)}
 .tagline{margin:10px 0 0;color:#a9aab3;font-size:15px}
 nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--surface);border-bottom:1px solid var(--rule)}
@@ -38,17 +35,21 @@ nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(-
 .nav-in button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--red)}
 .wrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:48px;padding:32px 5% 24px}
 .sec-title{font-family:var(--head);font-size:15px;font-weight:700;margin:0 0 16px;color:var(--mute)}
-.lead{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;padding-bottom:32px;margin-bottom:32px;border-bottom:1px solid var(--rule)}
-.cov{display:block;aspect-ratio:16/10;background:var(--soft);overflow:hidden}
+.lead{display:grid;grid-template-columns:1fr;gap:22px;padding-bottom:34px;margin-bottom:34px;border-bottom:1px solid var(--rule)}
+.lead .cov{aspect-ratio:16/9;min-height:280px;max-height:540px;border-radius:10px}
+.cov{display:block;aspect-ratio:16/10;background:var(--soft);overflow:hidden;border-radius:8px}
 .cov img{width:100%;height:100%;object-fit:cover;display:block}
 .ph{width:100%;height:100%;display:grid;place-items:center;font-family:var(--head);font-weight:800;font-size:56px;color:var(--rule)}
 .tag{font-family:var(--head);font-weight:700;font-size:13px;color:var(--red)}
 .card h3{font-family:var(--head);font-weight:700;font-size:20px;line-height:1.2;margin:6px 0 8px;letter-spacing:-.01em}
-.lead h3{font-size:clamp(26px,3.6vw,42px);line-height:1.1;letter-spacing:-.02em;font-weight:800}
+.lead h3{font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-.02em;font-weight:800}
+.card h3 a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
 .ex{margin:0 0 10px;color:var(--mute);font-size:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.lead .ex{font-size:18px;-webkit-line-clamp:4}
 .meta{margin:0;font-family:var(--head);font-size:13px;color:var(--mute)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:36px 28px}
 .card .cov{margin-bottom:12px}
+.lead .cov{margin-bottom:0}
 .pop{position:sticky;top:calc(env(safe-area-inset-top,0px) + 64px);align-self:start;border-top:3px solid var(--ink);padding-top:14px}
 .pop ol{list-style:none;margin:0;padding:0;counter-reset:n}
 .pop li{counter-increment:n;display:grid;grid-template-columns:34px 1fr;gap:6px;padding:14px 0;border-bottom:1px solid var(--rule)}
@@ -62,11 +63,11 @@ nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(-
 .btn.pri{background:var(--red);border-color:var(--red);color:var(--on-red)}
 .reader{position:fixed;inset:0;z-index:60;background:var(--bg);overflow-y:auto;padding:calc(env(safe-area-inset-top,0px) + 16px) 5% calc(env(safe-area-inset-bottom,0px) + 48px)}
 .reader[hidden]{display:none}
-.art{max-width:720px;margin:0 auto}
+.art{max-width:760px;margin:0 auto}
 .back{margin:8px 0 28px}
 .art h1{font-family:var(--head);font-weight:800;font-size:clamp(30px,5vw,48px);line-height:1.08;letter-spacing:-.02em;margin:8px 0 14px}
 .art .cov{aspect-ratio:16/9;margin:22px 0 28px}
-.body{font-size:19px;line-height:1.75;max-width:66ch}
+.body{font-size:19px;line-height:1.75;max-width:68ch}
 .body img{display:block;margin:24px 0;height:auto}
 .crew{margin-top:36px;padding-top:16px;border-top:1px solid var(--rule);font-family:var(--head);font-size:14px;color:var(--mute)}
 footer{border-top:1px solid var(--rule);background:var(--surface);padding:28px 5%;margin-top:24px;font-family:var(--head);font-size:14px;color:var(--mute)}
@@ -77,7 +78,7 @@ footer{border-top:1px solid var(--rule);background:var(--surface);padding:28px 5
 #ed img{max-width:100%;height:auto;display:block;margin:10px 0}
 .row{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;flex-wrap:wrap}
 .toast{position:fixed;left:50%;transform:translateX(-50%);top:calc(env(safe-area-inset-top,0px) + 70px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-family:var(--head);font-size:14px;z-index:100}
-@media (max-width:860px){.wrap{grid-template-columns:1fr;gap:32px}.pop{position:static}.lead{grid-template-columns:1fr}.r3{grid-template-columns:1fr}}
+@media (max-width:860px){.wrap{grid-template-columns:1fr;gap:32px}.pop{position:static}.lead .cov{min-height:210px}.r3{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 .rr{position:fixed;inset:0;z-index:90;background:var(--bg);display:flex;flex-direction:column}
 .rr[hidden]{display:none}
@@ -106,7 +107,7 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
 </style>
 </head>
 <body>
-<header class="mast"><div class="mast-in"><div class="mark" aria-hidden="true">BB</div><div>
+<header class="mast"><div class="mast-in"><div>
 <h1 class="logo" id="logo">Bangku Belakang<span>Media</span></h1>
 <p class="tagline">Kabar dari barisan paling belakang, tanpa filter.</p>
 </div></div></header>
@@ -138,7 +139,7 @@ const crew=a=>`Penulis: ${esc(a.penulis||'-')} · Reporter: ${esc(a.reporter)} �
 function card(a,lead){
   return `<article class="card ${lead?'lead':''}"><a class="cov" href="#${a.id}" aria-label="${esc(a.judul)}">${cover(a)}</a><div>
   <span class="tag">${esc(a.kat)}</span><h3><a href="#${a.id}">${esc(a.judul)}</a></h3>
-  <p class="ex">${esc(plain(a.isi).slice(0,lead?260:160))}</p><p class="meta">${fmt(a.t)}</p>
+  <p class="ex">${esc(plain(a.isi).slice(0,lead?280:160))}</p><p class="meta">${fmt(a.t)}</p>
   ${admin?`<div class="acts admin-only"><button data-edit="${a.id}">Edit</button><button data-del="${a.id}">Hapus</button></div>`:''}</div></article>`}
 
 function render(){
@@ -196,8 +197,7 @@ function initFx(){
   if(RM||!window.gsap||!window.ScrollTrigger)return;
   gsap.registerPlugin(ScrollTrigger);
   if(window.Lenis){lenis=new Lenis({lerp:.09});lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0)}
-  gsap.from('.mark',{scale:.6,opacity:0,rotate:-14,duration:1.1,ease:'back.out(1.7)'});
-  gsap.from('.tagline',{y:14,opacity:0,duration:.8,delay:.35,ease:'power3.out'});
+  gsap.from('.tagline',{y:14,opacity:0,duration:.8,delay:.2,ease:'power3.out'});
   FXON=true;fx();addEventListener('load',()=>ScrollTrigger.refresh());
 }
 document.addEventListener('DOMContentLoaded',initFx);
@@ -215,7 +215,7 @@ setTimeout(()=>{if(ST==='load'){ST='err';render()}},12000);
 let ON=false,taps=0,tt,cur=null,rg=null;
 const errMsg=x=>({'auth/invalid-credential':'Email atau password salah.','auth/wrong-password':'Email atau password salah.','auth/user-not-found':'Email atau password salah.','auth/invalid-email':'Format email tidak valid.','auth/too-many-requests':'Terlalu banyak percobaan. Coba lagi nanti.','auth/network-request-failed':'Tidak ada koneksi internet.','auth/operation-not-supported-in-this-environment':'Buka web lewat alamat hosting (https), bukan file lokal.','permission-denied':'Akun ini tidak punya izin menulis. Periksa email admin di aturan Firestore.','unavailable':'Server tidak terjangkau. Coba lagi.'}[x&&x.code]||'Terjadi kesalahan: '+((x&&(x.code||x.message))||x));
 function toast(m){let t=$('.toast');if(!t){t=document.createElement('div');t.className='toast admin-only';t.setAttribute('role','status');document.body.append(t)}t.textContent=m;clearTimeout(t._h);t._h=setTimeout(()=>t.remove(),5000)}
-document.querySelectorAll('#logo,.mark').forEach(x=>x.addEventListener('click',()=>{if(ON)return;clearTimeout(tt);tt=setTimeout(()=>taps=0,2500);if(++taps>=5){taps=0;login()}}));
+document.querySelectorAll('#logo').forEach(x=>x.addEventListener('click',()=>{if(ON)return;clearTimeout(tt);tt=setTimeout(()=>taps=0,2500);if(++taps>=5){taps=0;login()}}));
 function hashLogin(){if(location.hash==='#redaksi'){location.hash='';if(!ON)login()}}
 addEventListener('hashchange',hashLogin);
 
@@ -255,9 +255,9 @@ function unlock(u){
 function rlist(){const L=[...S].sort((a,b)=>b.t-a.t);
   $('#rl').innerHTML=L.length?L.map(a=>`<div class="rit"><button class="rtt" data-e="${a.id}">${esc(a.judul)}<small>${esc(a.kat)} · ${fmt(a.t)}</small></button><button class="btn" data-d="${a.id}">Hapus</button></div>`).join(''):'<p class="meta">Belum ada berita. Klik “+ Berita baru”.</p>'}
 function empty(){$('#rr').classList.remove('editing');$('#re').innerHTML='<p class="meta" style="margin-top:30px">Pilih berita di daftar untuk mengedit, atau klik “+ Berita baru”.</p>'}
-const pick=(max=900)=>new Promise(res=>{const i=document.createElement('input');i.type='file';i.accept='image/*';
+const pick=(max=1200)=>new Promise(res=>{const i=document.createElement('input');i.type='file';i.accept='image/*';
   i.onchange=()=>{const f=i.files[0];if(!f)return res(null);const im=new Image();
-    im.onload=()=>{const k=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);res(c.toDataURL('image/jpeg',.72))};
+    im.onload=()=>{const k=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);res(c.toDataURL('image/jpeg',.78))};
     im.onerror=()=>{alert('Foto tidak bisa dibaca.');res(null)};im.src=URL.createObjectURL(f)};i.click()});
 function openForm(id){
   const a=id?S.find(x=>x.id===id):null;cur={id:a?.id,img:a?.img||'',t:a?.t};
@@ -273,8 +273,8 @@ function openForm(id){
   <div class="row"><button type="button" class="btn" id="x">Batal</button><button class="btn pri">Simpan dan terbitkan</button></div></form>`;
   const ed=$('#ed');ed.addEventListener('blur',()=>{const s=getSelection();if(s.rangeCount&&ed.contains(s.anchorNode))rg=s.getRangeAt(0)});
   document.querySelectorAll('#re [data-f]').forEach(b=>{b.onmousedown=e=>e.preventDefault();b.onclick=()=>document.execCommand(b.dataset.f)});
-  $('#cv').onclick=async()=>{const u=await pick(900);if(u){cur.img=u;$('#cvn').textContent='Foto terpasang'}};
-  $('#ii').onclick=async()=>{const u=await pick(800);if(!u)return;ed.focus();if(rg){const s=getSelection();s.removeAllRanges();s.addRange(rg)}document.execCommand('insertImage',false,u)};
+  $('#cv').onclick=async()=>{const u=await pick(1200);if(u){cur.img=u;$('#cvn').textContent='Foto terpasang'}};
+  $('#ii').onclick=async()=>{const u=await pick(900);if(!u)return;ed.focus();if(rg){const s=getSelection();s.removeAllRanges();s.addRange(rg)}document.execCommand('insertImage',false,u)};
   $('#x').onclick=empty;
   $('#f').onsubmit=async e=>{e.preventDefault();const isi=clean(ed.innerHTML).trim();
     if(!plain(isi)&&!isi.includes('<img')){alert('Isi berita tidak boleh kosong.');return}
