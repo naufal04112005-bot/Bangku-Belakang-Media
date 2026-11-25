@@ -76,14 +76,20 @@ nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(-
 .art h1{font-family:var(--head);font-weight:800;font-size:clamp(26px,4.5vw,44px);line-height:1.1;letter-spacing:-.02em;margin:8px 0 12px}
 .art .cov{aspect-ratio:auto;max-height:none;background:transparent;margin:20px 0 26px;border-radius:8px;overflow:hidden}
 .art .cov img{width:100%;height:auto;max-height:none;object-fit:contain;display:block;border-radius:8px}
-.body{font-size:18px;line-height:1.75;max-width:68ch}
+.body{font-size:18px;line-height:1.75;max-width:100%;width:100%;text-align:justify;hyphens:auto;white-space:normal;word-break:normal;overflow-wrap:break-word}
+.body p,.body div{margin:0 0 1.1em}
+.body p:last-child,.body div:last-child{margin-bottom:0}
 .body img{width:100%;max-width:100%;display:block;margin:22px 0;height:auto;border-radius:6px}
 .crew{margin-top:34px;padding-top:16px;border-top:1px solid var(--rule);font-family:var(--head);font-size:14px;color:var(--mute)}
 footer{border-top:1px solid var(--rule);background:var(--surface);padding:26px 5%;margin-top:24px;font-family:var(--head);font-size:14px;color:var(--mute)}
 .warn{color:var(--red);font-size:14px;margin:8px 0 0}
 .r3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .tb{display:flex;gap:6px;margin-bottom:6px}
-#ed{min-height:200px;max-height:40vh;overflow:auto;padding:10px;border:1px solid var(--rule);border-radius:6px;background:var(--bg);font-size:16px;outline:none}
+#ed{min-height:240px;max-height:48vh;overflow-y:auto;overflow-x:hidden;padding:20px 26px;border:1.5px solid var(--rule);border-left:4px solid var(--red);border-right:4px solid var(--rule);border-radius:6px;background:var(--surface);font-size:17px;line-height:1.75;outline:none;width:100%;max-width:100%;text-align:justify;hyphens:auto;white-space:normal;word-break:normal;overflow-wrap:break-word;box-shadow:inset 0 1px 3px rgba(0,0,0,.04)}
+#ed p,#ed div{margin:0 0 1em}
+#ed p:last-child,#ed div:last-child{margin-bottom:0}
+#ed:focus{border-color:var(--ink);border-left-color:var(--red)}
+@media (max-width:640px){#ed{padding:14px 16px;font-size:16px}}
 #ed img{max-width:100%;height:auto;display:block;margin:10px 0}
 .row{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;flex-wrap:wrap}
 .toast{position:fixed;left:50%;transform:translateX(-50%);top:calc(env(safe-area-inset-top,0px) + 70px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-family:var(--head);font-size:14px;z-index:100}
@@ -307,7 +313,14 @@ function openForm(id){
   <div class="r3"><div><label for="p">Penulis</label><input type="text" id="p" required value="${esc(a?.penulis)}"></div><div><label for="r">Reporter</label><input type="text" id="r" required value="${esc(a?.reporter)}"></div><div><label for="e">Editor</label><input type="text" id="e" required value="${esc(a?.editor)}"></div></div>
   <label class="chk"><input type="checkbox" id="pp" ${a?.pop?'checked':''}> Tampilkan di Terpopuler</label>
   <div class="row"><button type="button" class="btn" id="x">Batal</button><button class="btn pri">Simpan dan terbitkan</button></div></form>`;
-  const ed=$('#ed');ed.addEventListener('blur',()=>{const s=getSelection();if(s.rangeCount&&ed.contains(s.anchorNode))rg=s.getRangeAt(0)});
+  const ed=$('#ed');
+  ed.addEventListener('paste',e=>{
+    e.preventDefault();
+    const txt=(e.clipboardData||window.clipboardData).getData('text/plain')||'';
+    const cleanTxt=txt.replace(/\u00A0/g,' ').replace(/\r\n?/g,'\n').split(/\n{2,}/).map(p=>p.replace(/\n+/g,' ').replace(/\s{2,}/g,' ').trim()).filter(Boolean).join('\n\n');
+    document.execCommand('insertText',false,cleanTxt);
+  });
+  ed.addEventListener('blur',()=>{const s=getSelection();if(s.rangeCount&&ed.contains(s.anchorNode))rg=s.getRangeAt(0)});
   document.querySelectorAll('#re [data-f]').forEach(b=>{b.onmousedown=e=>e.preventDefault();b.onclick=()=>document.execCommand(b.dataset.f)});
   $('#cv').onclick=async()=>{const u=await pick(1200);if(u){cur.img=u;$('#cvn').textContent='Foto terpasang'}};
   $('#ii').onclick=async()=>{const u=await pick(900);if(!u)return;ed.focus();if(rg){const s=getSelection();s.removeAllRanges();s.addRange(rg)}document.execCommand('insertImage',false,u)};
