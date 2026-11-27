@@ -286,7 +286,11 @@ function unlock(u){
   document.body.append(r);document.body.style.overflow='hidden';
   r.onclick=async e=>{const a=e.target.closest('[data-e]');if(a)return openForm(a.dataset.e);
     const d=e.target.closest('[data-d]');if(!d||!confirm('Hapus berita ini secara permanen?'))return;
-    try{await FB.del(d.dataset.d);S=S.filter(x=>x.id!==d.dataset.d);render();rlist();empty();toast('Berita dihapus.')}catch(x){alert(errMsg(x))}};
+    const targetId=d.dataset.d,prevS=[...S];
+    S=S.filter(x=>x.id!==targetId);
+    try{localStorage.setItem('bbm-cache',JSON.stringify(S))}catch(err){}
+    render();rlist();empty();toast('Berita dihapus.');
+    FB.del(targetId).catch(x=>{S=prevS;try{localStorage.setItem('bbm-cache',JSON.stringify(S))}catch(err){}render();if($('#rl'))rlist();alert(errMsg(x))})};
   $('#nw').onclick=()=>openForm();
   $('#a2').onclick=async()=>{await loadNews();toast('Daftar berita diperbarui.')};
   $('#a4').onclick=()=>{FB.logout().finally(()=>location.reload())};
